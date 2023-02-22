@@ -1,0 +1,8 @@
+# Ignore my direnv setup
+.envrc
+.direnv
+.tool-versions
+
+# Ignore local ruby state and locks
+.bundle
+Gemfile.lock
