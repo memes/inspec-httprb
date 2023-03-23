@@ -3,11 +3,8 @@
 require 'http'
 require 'inspec/resources/http'
 
-# Opts
-# :open_timeout, 60
-# :read_timeout, 60
-# :max_redirects
-# :proxy
+# Implements an HTTP client that acts like Inspec http resource, but uses HTTPrb
+# as the client.
 class HTTPClient < Inspec.resource(1)
   name 'httprb'
   desc <<-_DESCRIPTION_
