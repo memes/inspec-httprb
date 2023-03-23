@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/memes/inspec-httprb/compare/v1.0.0...v1.0.1) (2023-03-23)
+
+
+### Bug Fixes
+
+* Populate inspec.yml files correctly. ([bb3339c](https://github.com/memes/inspec-httprb/commit/bb3339c2eeacb00f89c6b576408eb169e18c0015))
+
 ## 1.0.0 (2023-03-23)
 
 
