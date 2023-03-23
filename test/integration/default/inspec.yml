@@ -2,4 +2,4 @@
 name: inspec-httprb-verifier
 depends:
   - name: inspec-httprb
-    path: /Users/memes/projects/personal/inspec-httprb/
+    path: ../../../

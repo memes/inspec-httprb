@@ -1,11 +1,13 @@
 ---
 name: inspec-httrb
-title: Inspec profile
-maintainer: The Authors
-copyright: The Authors
-copyright_email: you@example.com
+title: Provides an http resource using HTTPrb client
+maintainer: Matthew Emes
+copyright: Matthew Emes
+copyright_email: memes@matthewemes.com
 license: Apache-2.0
-summary: An InSpec Compliance Profile
-version: 0.1.0
+summary: >-
+  A drop-in replacement for standard http resource that uses HTTPrb in
+  preference to Faraday.
+version: 1.0.1
 supports:
   platform: os
