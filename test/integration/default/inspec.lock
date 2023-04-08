@@ -1,7 +1,0 @@
----
-lockfile_version: 1
-depends:
-- name: inspec-httprb
-  resolved_source:
-    path: "/Users/memes/projects/personal/inspec-httprb"
-  version_constraints: []
