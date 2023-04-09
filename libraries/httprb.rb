@@ -2,6 +2,7 @@
 
 require 'http'
 require 'inspec/resources/http'
+require 'uri'
 
 # Implements an HTTP client that acts like Inspec http resource, but uses HTTPrb
 # as the client.
@@ -76,7 +77,8 @@ class HTTPClient < Inspec.resource(1)
   def ssl
     return { verify_mode: OpenSSL::SSL::VERIFY_NONE, min_version: nil } unless opts.fetch(:ssl_verify, true)
 
-    opts.fetch(:ssl, { verify_mode: OpenSSL::SSL::VERIFY_PEER, min_version: OpenSSL::SSL::TLS1_2_VERSION })
+    { verify_mode: OpenSSL::SSL::VERIFY_PEER,
+      min_version: OpenSSL::SSL::TLS1_2_VERSION }.merge(opts.fetch(:ssl, {}))
   end
 
   def request_headers
@@ -110,9 +112,26 @@ class HTTPClient < Inspec.resource(1)
     end
   end
 
-  # TODO: @memes - avoided so far, but will need to add it for private GKE testing, etc
   def proxy
-    {}
+    proxy = opts.fetch(:proxy, {})
+    return {} if proxy.empty?
+
+    return proxy_from_string(proxy) if proxy.is_a?(String)
+
+    uri_params = URI.split(proxy[:uri])
+    { proxy_address: (uri_params[2]).to_s, proxy_port: uri_params[3], proxy_username: proxy[:user],
+      proxy_password: proxy[:password] }
+  end
+
+  def proxy_from_string(proxy)
+    uri_params = URI.split(proxy)
+    params = { proxy_address: (uri_params[2]).to_s, proxy_port: uri_params[3] }
+    unless uri_params[1].nil?
+      auth = uri_params[1].split(':')
+      params[:proxy_username] = auth[0] unless auth.empty?
+      params[:proxy_password] = auth[1] if auth.count > 1
+    end
+    params
   end
 
   def timeout
