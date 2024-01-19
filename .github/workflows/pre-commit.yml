@@ -8,7 +8,8 @@ name: pre-commit
 on:
   pull_request:
   push:
-    branches: [main]
+    branches-ignore:
+      - main
 permissions:
   contents: read
   pull-requests: read
@@ -20,7 +21,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: install talisman
         run: |
-          sudo curl -sLo /usr/local/bin/talisman https://github.com/thoughtworks/talisman/releases/download/v1.30.2/talisman_linux_amd64
+          sudo curl -sLo /usr/local/bin/talisman https://github.com/thoughtworks/talisman/releases/download/v1.31.0/talisman_linux_amd64
           sudo chmod 0755 /usr/local/bin/talisman
       - uses: ruby/setup-ruby@v1
         with:
@@ -28,5 +29,5 @@ jobs:
           bundler-cache: true
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: '3.12'
       - uses: pre-commit/action@v3.0.0
