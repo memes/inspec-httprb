@@ -175,3 +175,91 @@ Style/StringChars:
   Enabled: true
 Style/SwapValues:
   Enabled: true
+Gemspec/AddRuntimeDependency:
+  Enabled: true
+Lint/ArrayLiteralInRegexp:
+  Enabled: true
+Lint/ConstantReassignment:
+  Enabled: true
+Lint/CopDirectiveSyntax:
+  Enabled: true
+Lint/DuplicateMatchPattern:
+  Enabled: true
+Lint/DuplicateSetElement:
+  Enabled: true
+Lint/HashNewWithKeywordArgumentsAsDefault:
+  Enabled: true
+Lint/ItWithoutArgumentsInBlock:
+  Enabled: true
+Lint/LiteralAssignmentInCondition:
+  Enabled: true
+Lint/MixedCaseRange:
+  Enabled: true
+Lint/NumericOperationWithConstantResult:
+  Enabled: true
+Lint/RedundantRegexpQuantifiers:
+  Enabled: true
+Lint/RedundantTypeConversion:
+  Enabled: true
+Lint/SharedMutableDefault:
+  Enabled: true
+Lint/SuppressedExceptionInNumberConversion:
+  Enabled: true
+Lint/UnescapedBracketInRegexp:
+  Enabled: true
+Lint/UselessConstantScoping:
+  Enabled: true
+Lint/UselessDefined:
+  Enabled: true
+Lint/UselessNumericOperation:
+  Enabled: true
+Style/AmbiguousEndlessMethodDefinition:
+  Enabled: true
+Style/BitwisePredicate:
+  Enabled: true
+Style/CombinableDefined:
+  Enabled: true
+Style/DigChain:
+  Enabled: true
+Style/ExactRegexpMatch:
+  Enabled: true
+Style/FileNull:
+  Enabled: true
+Style/FileTouch:
+  Enabled: true
+Style/HashSlice:
+  Enabled: true
+Style/ItAssignment:
+  Enabled: true
+Style/KeywordArgumentsMerging:
+  Enabled: true
+Style/MapIntoArray:
+  Enabled: true
+Style/RedundantArrayConstructor:
+  Enabled: true
+Style/RedundantCurrentDirectoryInPath:
+  Enabled: true
+Style/RedundantFilterChain:
+  Enabled: true
+Style/RedundantFormat:
+  Enabled: true
+Style/RedundantInterpolationUnfreeze:
+  Enabled: true
+Style/RedundantRegexpArgument:
+  Enabled: true
+Style/RedundantRegexpConstructor:
+  Enabled: true
+Style/ReturnNilInPredicateMethodDefinition:
+  Enabled: true
+Style/SafeNavigationChainLength:
+  Enabled: true
+Style/SendWithLiteralMethodName:
+  Enabled: true
+Style/SingleLineDoEndBlock:
+  Enabled: true
+Style/SuperArguments:
+  Enabled: true
+Style/SuperWithArgsParentheses:
+  Enabled: true
+Style/YAMLFileRead:
+  Enabled: true
