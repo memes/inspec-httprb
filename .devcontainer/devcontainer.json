@@ -1,0 +1,39 @@
+{
+    "name": "memes-inspec-httprb",
+    "image": "mcr.microsoft.com/devcontainers/ruby:3.3-bookworm",
+    "features": {
+        "ghcr.io/memes/devcontainers-features/direnv:1": {},
+        "ghcr.io/memes/devcontainers-features/starship:1": {},
+        "ghcr.io/memes/devcontainers-features/talisman:1": {
+            "version": "1.37.0"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "Gruntfuggly.todo-tree",
+                "Shopify.ruby-extensions-pack",
+                "redhat.vscode-yaml",
+                "streetsidesoftware.code-spell-checker",
+                "gamunu.opentofu",
+                "esbenp.prettier-vscode",
+                "DavidAnson.vscode-markdownlint",
+                "hashicorp.hcl",
+                "koichisasada.vscode-rdbg"
+            ]
+        }
+    },
+    "onCreateCommand": {
+        "install-pre-commit": "sudo sh -c 'apt update && apt install -y --no-install-recommends pipx && rm -rf /var/lib/apt/lists/*' && pipx install pre-commit",
+        "configure-ruby": "bundle config with dev && bundle config binstubs ~/.local/bin",
+        "modify-default-omz-plugins": ["/usr/bin/sed", "-i.onCreateCommand" , "-e", "/^plugins=/c\\plugins=(git dotenv)", "/home/vscode/.zshrc"]
+    },
+    "postCreateCommand": {
+        "pre-commit": "pre-commit install --hook-type commit-msg --hook-type pre-commit"
+    },
+    "updateContentCommand": {
+        "update-ruby": "bundle install"
+    },
+    "containerUser": "vscode",
+    "updateRemoteUserUID": true
+}

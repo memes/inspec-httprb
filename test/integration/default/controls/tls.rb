@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 control 'tls-1.0-default' do
-  title 'Verify httprb against TLS 1.0 server with default options'
+  title 'Verify httprb against TLS 1.0 server with default options should fail'
   impact 0.8
 
   describe begin
@@ -15,20 +15,25 @@ control 'tls-1.0-default' do
 end
 
 control 'tls-1.0-no-verify' do
-  title 'Verify httprb against TLS 1.0 server with verify disabled'
+  title 'Verify httprb against TLS 1.0 server with verify disabled should fail'
   impact 0.8
 
-  describe httprb('https://tls-v1-0.badssl.com:1010/', ssl_verify: false) do
-    its('status') { should eq 200 }
+  describe begin
+    _ = httprb('https://tls-v1-0.badssl.com:1010/').body
+    false
+  rescue StandardError
+    true
+  end do
+    it { should cmp true }
   end
 end
 
 control 'tls-1.1-default' do
-  title 'Verify httprb against TLS 1.1 server with default options'
+  title 'Verify httprb against TLS 1.1 server with default options should fail'
   impact 0.8
 
   describe begin
-    _ = httprb('https://tls-v1-1.badssl.com:1011/').body
+    _ = httprb('https://tls-v1-1.badssl.com:1010/').body
     false
   rescue StandardError
     true
@@ -38,11 +43,16 @@ control 'tls-1.1-default' do
 end
 
 control 'tls-1.1-no-verify' do
-  title 'Verify httprb against TLS 1.1 server with verify disabled'
+  title 'Verify httprb against TLS 1.1 server with verify disabled should fail'
   impact 0.8
 
-  describe httprb('https://tls-v1-1.badssl.com:1011/', ssl_verify: false) do
-    its('status') { should eq 200 }
+  describe begin
+    _ = httprb('https://tls-v1-1.badssl.com:1010/').body
+    false
+  rescue StandardError
+    true
+  end do
+    it { should cmp true }
   end
 end
 
