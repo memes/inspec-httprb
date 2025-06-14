@@ -7,7 +7,7 @@ gem 'http', '~> 5.3.1'
 gem 'inspec-core', '~> 5.21.29'
 group :dev do
   gem 'inspec-core-bin', '~> 5.21.29', require: false
-  gem 'rake', '~> 13.2.1', require: false
+  gem 'rake', '~> 13.3.0', require: false
   gem 'rubocop', '~>1.70.0', require: false
   gem 'rubocop-rake', '~>0.6.0', require: false
 end
