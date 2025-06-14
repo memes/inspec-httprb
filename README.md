@@ -1,7 +1,7 @@
 # inspec-httprb
 
 ![GitHub release](https://img.shields.io/github/v/release/memes/inspec-httprb?sort=semver)
-![Maintenance](https://img.shields.io/maintenance/yes/2024)
+![Maintenance](https://img.shields.io/maintenance/yes/2025)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
 
 This repo contains a drop-in replacement for Inspec [http] resource. The intent
