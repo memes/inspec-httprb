@@ -6,3 +6,5 @@ fileignoreconfig:
   checksum: 3f5ae0ffc2db757c63c9a109a457cb1b9add14727848595352e73cec7e31ef25
 - filename: libraries/httprb.rb
   checksum: 721d2b89506d0b24a78306377ad66c6b0857f7c0068dbd972931a25be65ac98e
+- filename: .rubocop.yml
+  checksum: f90e402bfd178d2fe046fd9df5c28acb26b7c3b837682788916370b97f6c6419
