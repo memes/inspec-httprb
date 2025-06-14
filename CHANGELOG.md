@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.3](https://github.com/memes/inspec-httprb/compare/v1.0.2...v1.0.3) (2025-06-14)
+
+
+### Bug Fixes
+
+* Address rubocop style issues ([98a33bf](https://github.com/memes/inspec-httprb/commit/98a33bf5c849bdc0cf9ef4efa6d8134c585c8ce1))
+
 ## [1.0.2](https://github.com/memes/inspec-httprb/compare/v1.0.1...v1.0.2) (2023-04-09)
 
 
