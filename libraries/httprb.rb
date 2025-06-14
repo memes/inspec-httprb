@@ -75,7 +75,9 @@ class HTTPClient < Inspec.resource(1)
   end
 
   def ssl
-    return { verify_mode: OpenSSL::SSL::VERIFY_NONE, min_version: nil } unless opts.fetch(:ssl_verify, true)
+    return { verify_mode: OpenSSL::SSL::VERIFY_NONE, min_version: OpenSSL::SSL::TLS1_VERSION } unless opts.fetch(
+      :ssl_verify, true
+    )
 
     { verify_mode: OpenSSL::SSL::VERIFY_PEER,
       min_version: OpenSSL::SSL::TLS1_2_VERSION }.merge(opts.fetch(:ssl, {}))
@@ -119,13 +121,13 @@ class HTTPClient < Inspec.resource(1)
     return proxy_from_string(proxy) if proxy.is_a?(String)
 
     uri_params = URI.split(proxy[:uri])
-    { proxy_address: (uri_params[2]).to_s, proxy_port: uri_params[3], proxy_username: proxy[:user],
+    { proxy_address: uri_params[2].to_s, proxy_port: uri_params[3], proxy_username: proxy[:user],
       proxy_password: proxy[:password] }
   end
 
   def proxy_from_string(proxy)
     uri_params = URI.split(proxy)
-    params = { proxy_address: (uri_params[2]).to_s, proxy_port: uri_params[3] }
+    params = { proxy_address: uri_params[2].to_s, proxy_port: uri_params[3] }
     unless uri_params[1].nil?
       auth = uri_params[1].split(':')
       params[:proxy_username] = auth[0] unless auth.empty?
