@@ -30,6 +30,8 @@ repos:
     rev: v1.78.0
     hooks:
       - id: rubocop
+        additional_dependencies:
+          - rubocop-rake
   - repo: https://github.com/thoughtworks/talisman
     rev: v1.37.0
     hooks:
