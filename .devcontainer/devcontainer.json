@@ -15,7 +15,7 @@
                 "Shopify.ruby-extensions-pack",
                 "redhat.vscode-yaml",
                 "streetsidesoftware.code-spell-checker",
-                "gamunu.opentofu",
+                "OpenTofu.vscode-opentofu",
                 "esbenp.prettier-vscode",
                 "DavidAnson.vscode-markdownlint",
                 "hashicorp.hcl",
